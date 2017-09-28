@@ -13,7 +13,7 @@
        "xunlei_enabled" : false,
        "emule_max_download" : 0
     }
-    $ syno -host superman.synology.me:5000 -username admin -password mysecretpassword DSSetConfig -bt_max_download=2048
+    $ syno -host superman.synology.me:5000 -username admin -password mysecretpassword DSSetConfig -bt_max_download=2048 -bt_max_upload=256
     {
        "emule_max_upload" : 20,
        "bt_max_download" : 2048,
@@ -23,7 +23,7 @@
        "ftp_max_download" : 0,
        "nzb_max_download" : 0,
        "emule_enabled" : false,
-       "bt_max_upload" : 32,
+       "bt_max_upload" : 256,
        "xunlei_enabled" : false,
        "emule_default_destination" : null,
        "emule_max_download" : 0
