@@ -1,4 +1,4 @@
-    $ syno -host superman.synology.me:5000 -username admin -password mysecretpassword DSGetConfig | json_pp                                                
+    $ syno -host superman.synology.me:5000 -username admin -password mysecretpassword DSGetConfig | json_pp
     {
        "bt_max_download" : 1024,
        "emule_enabled" : false,
@@ -14,7 +14,6 @@
        "emule_max_download" : 0
     }
     $ syno -host superman.synology.me:5000 -username admin -password mysecretpassword DSSetConfig -bt_max_download=2048
-    $ syno -host superman.synology.me:5000 -username admin -password mysecretpassword DSGetConfig | json_pp                                                
     {
        "emule_max_upload" : 20,
        "bt_max_download" : 2048,
