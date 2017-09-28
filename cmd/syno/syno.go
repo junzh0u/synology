@@ -34,14 +34,14 @@ func main() {
 		fmt.Println(string(output))
 
 	case "DSSetConfig":
-		fs := flag.NewFlagSet("DSSetConfig", flag.ContinueOnError)
+		fs := flag.NewFlagSet("DSSetConfig", flag.ExitOnError)
 		btMaxDownload := fs.String("bt_max_download", "", "Max BT download speed in KB/s (“0” means unlimited)")
 		btMaxUpload := fs.String("bt_max_upload", "", "Max BT upload speed in KB/s (“0” means unlimited)")
 		emuleMaxDownload := fs.String("emule_max_download", "", "Max eMule download speed in KB/s (“0” means unlimited)")
 		emuleMaxUpload := fs.String("emule_max_upload", "", "Max eMule upload speed in KB/s (“0” means unlimited)")
 		nzbMaxDownload := fs.String("nzb_max_download", "", "Max NZB download speed in KB/s (“0” means unlimited)")
-		httpMaxDownload := fs.String("http_max_download", "", "Max HTTP download speed in KB/s (“0” means unlimited). For more info, please see Limitations.")
-		ftpMaxDownload := fs.String("ftp_max_download", "", "Max FTP download speed in KB/s (“0” means unlimited). For more info, please see Limitations.")
+		httpMaxDownload := fs.String("http_max_download", "", "Max HTTP download speed in KB/s (“0” means unlimited)")
+		ftpMaxDownload := fs.String("ftp_max_download", "", "Max FTP download speed in KB/s (“0” means unlimited)")
 		emuleEnabled := fs.String("emule_enabled", "", "If eMule service is enabled")
 		unzipServiceEnabled := fs.String("unzip_service_enabled", "", "If Auto unzip service is enabled for users except admin or administrators group")
 		defaultDestination := fs.String("default_destination", "", "Default destination")
