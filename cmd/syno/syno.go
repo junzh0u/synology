@@ -48,7 +48,7 @@ func main() {
 		emuleDefaultDestination := fs.String("emule_default_destination", "", "Emule default destination")
 		fs.Parse(flag.Args()[1:])
 
-		config := map[string]string{
+		params := map[string]string{
 			"bt_max_download":           *btMaxDownload,
 			"bt_max_upload":             *btMaxUpload,
 			"emule_max_download":        *emuleMaxDownload,
@@ -61,11 +61,20 @@ func main() {
 			"default_destination":       *defaultDestination,
 			"emule_default_destination": *emuleDefaultDestination,
 		}
-
-		_, err := client.DownloadStationInfoSetServerConfig(config)
+		_, err := client.DownloadStationInfoSetServerConfig(params)
 		if err != nil {
 			glog.Fatal(err)
 		}
+
+		config, err := client.DownloadStationInfoGetConfig()
+		if err != nil {
+			glog.Fatal(err)
+		}
+		output, err := json.Marshal(config)
+		if err != nil {
+			glog.Fatal(err)
+		}
+		fmt.Println(string(output))
 
 	default:
 		flag.PrintDefaults()
